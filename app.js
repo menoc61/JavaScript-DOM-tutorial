@@ -1,6 +1,12 @@
 const bookList = document.querySelector('#book-list');
 
 
+console.log('#book-list next sibling:', bookList.nextSibling);
+console.log('#book-list next element sibling:', bookList.nextElementSibling);
+console.log('#book-list previous sibling:', bookList.previousSibling);
+console.log('#book-list previous element sibling:', bookList.previousElementSibling);
+
+
 console.log('book list parent element:', bookList.parentElement);
 console.log('book list parent node:', bookList.parentNode);
 
@@ -40,3 +46,5 @@ const bookList = document.querySelector('#book-list');
 bookList.innerHTML = '<h2>Books and more books...</h2>';
 bookList.innerHTML += '<p>This is how you add HTML content</p>';
 
+
+bookList.previousElementSibling.querySelector('p').innerHTML += '<br />Too cool for everyone else!';
