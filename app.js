@@ -1,4 +1,15 @@
 
+const list = document.querySelector('#book-list ul');
+
+// delete books
+list.addEventListener('click', (e) => {
+  if(e.target.className == 'delete'){
+    const li = e.target.parentElement;
+    li.parentNode.removeChild(li);
+  }
+});
+
+
 const listItems = document.querySelectorAll('#book-list ul li');
 
 Array.from(listItems).forEach(function(item){
@@ -71,4 +82,5 @@ bookList.innerHTML += '<p>This is how you add HTML content</p>';
 
 
 bookList.previousElementSibling.querySelector('p').innerHTML += '<br />Too cool for everyone else!';
+
 
