@@ -1,29 +1,21 @@
+const bookList = document.querySelector('#book-list');
 
-const wmf = document.querySelector('#book-list li:nth-child(2) .name');
-console.log(wmf);
+console.log('book list parent element:', bookList.parentElement);
+console.log('book list parent node:', bookList.parentNode);
 
-var books = document.querySelector('#book-list li .name');
-console.log(books);
-
-books = document.querySelectorAll('#book-list li .name');
-console.log(books);
-
-Array.from(books).forEach(function(book){
-  console.log(book);
+console.log('all node children:');
+Array.from(bookList.childNodes).forEach(function(node){
+  console.log(node);
 });
 
+console.log('all element children:');
+Array.from(bookList.children).forEach(function(node){
+  console.log(node);
+});
 
-const titles = document.getElementsByClassName('title');
+const titles = bookList.querySelectorAll('.name');
 
-console.log(Array.isArray(titles));
-console.log(Array.isArray(Array.from(titles)));
-
+console.log('Book titles:');
 Array.from(titles).forEach(function(title){
-  console.log(title);
+  console.log(title.textContent);
 });
-
-const search = document.getElementById('search-books');
-const bookList = document.getElementById('book-list');
-
-console.log(search, bookList);
-
